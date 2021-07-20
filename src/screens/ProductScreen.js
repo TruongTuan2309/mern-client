@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { Row, Col, Image, ListGroup, Card, Form } from "react-bootstrap";
+import { Row, Col, Image, ListGroup, Card, Form, Button } from "react-bootstrap";
 import Rating from "../components/Rating";
 import Message from "../components/Message";
 import Loader from "../components/Loader";
@@ -72,7 +72,7 @@ function ProductScreen({ history,match }) {
 
                 {product.countInStock > 0 && (
                   <ListGroup.Item>
-                    <Row>
+                    <Row className='align-items-center'>
                       <Col>Qty</Col>
                       <Col>
                         <Form.Control
@@ -93,14 +93,14 @@ function ProductScreen({ history,match }) {
 
                 <ListGroup.Item>
                   <Row>
-                    <button
+                    <Button
                     onClick={addToCartHandler}
-                      className="btn-dark"
+                      className="btn-dark w-100"
                       type="button"
                       disabled={product.countInStock === 0}
                     >
                       Add To Cart
-                    </button>
+                    </Button>
                   </Row>
                 </ListGroup.Item>
               </ListGroup>
